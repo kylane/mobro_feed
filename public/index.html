@@ -1,0 +1,29 @@
+<html lang="en">
+    <head>
+        <title>Mo Bro</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <span id="myDiv" style="font-size: 100px; font-family: Oswald; padding: 20px;"></div>
+    </body>
+    <script>
+        // Getting the HTML
+        async function FetchHtml() 
+        {
+            let response = await fetch('http://localhost:3000/api/value');
+            return await response.text(); // Returns it as Promise
+        }
+        // Using the HTML
+        async function Do()
+        {
+            document.getElementById('myDiv').innerHTML = await FetchHtml();
+        }
+        // Exe
+        Do();
+        setInterval(function(){
+            console.log('Updating');
+            Do();    
+        }, 30000);
+    </script>
+</html>
