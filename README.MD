@@ -16,4 +16,4 @@ To change the interval of update (default is 30 secs) edit line 27 of `public/in
 
 ---
 
-Thanks to Jan Wisgerhof for his advice and help
+##### Thanks to Jan Wisgerhof (`https://github.com/jwwisgerhof`) for his advice and help
