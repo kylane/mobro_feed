@@ -4,13 +4,16 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
         <script src="confetti.js"></script>
+        <META HTTP-EQUIV=”refresh” CONTENT=”6000″>
     </head>
     <body style="width: 100%; height: 100%; overflow: hidden">
         <span id="myDiv" style="font-size: 100px; font-family: Oswald; padding: 20px; z-index: 10; position: absolute;"></span>
         <canvas id="confetti-canvas" style="display:block;z-index:9;pointer-events:none" width="1280" height="1024"></canvas>
     </canvas>
     </body>
+    <script src="howler.js"></script>
     <script>
+        var sound = new Howl({src: ['cheer.wav']});
         // Getting the HTML
         async function FetchHtml() 
         {
@@ -18,22 +21,24 @@
             return await response.text(); // Returns it as Promise
         }
         // Using the HTML
-        let currentValue = " $0 ";
+        let currentValue = undefined;
         async function Do()
         {
             const newValue = await FetchHtml();
             if(currentValue !== newValue) {
                 console.log('Value changed!');
-                currentValue = newValue;
                 document.getElementById('myDiv').innerHTML = newValue;
                 //  Add actions here if the value changes
-                startConfetti();
+                if(currentValue !== undefined) {
+                    startConfetti();
+                    sound.play();
+                }
+                currentValue = newValue;
             } else {
                 //  If the value doesnt change go here.
                 stopConfetti();
                 console.log('No change in value');
             };
-
         }
         // Exe
         Do();
