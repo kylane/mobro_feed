@@ -20,4 +20,8 @@
 
 ---
 
+Have now added confetti from () when you reieve a donation. Can be disabled/removed in `public/index.html` or add whatever effects/triggers you please.
+
+---
+
 Thanks to Jan Wisgerhof (`https://github.com/jwwisgerhof`) for his advice and help
