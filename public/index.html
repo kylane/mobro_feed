@@ -17,13 +17,14 @@
         // Using the HTML
         async function Do()
         {
-            document.getElementById('myDiv').innerHTML = await FetchHtml();
+            const newValue = await FetchHtml();
+            document.getElementById('myDiv').innerHTML = newValue;
         }
         // Exe
         Do();
         setInterval(function(){
             console.log('Updating');
-            Do();    
-        }, 30000);
+            Do();
+        }, 5000);
     </script>
 </html>

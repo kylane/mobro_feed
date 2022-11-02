@@ -20,4 +20,4 @@
 
 ---
 
-##### Thanks to Jan Wisgerhof (`https://github.com/jwwisgerhof`) for his advice and help
+Thanks to Jan Wisgerhof (`https://github.com/jwwisgerhof`) for his advice and help
