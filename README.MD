@@ -16,11 +16,11 @@
 
 * To change your MoBro URL edit line 8 of `index.js`
 
-* To change the interval of update (default is 30 secs) edit line 27 of `public/index.html`
+* To change the interval of update (default is 10 secs) edit line 50 of `public/index.html`
 
 ---
 
-Have now added confetti from () when you reieve a donation. Can be disabled/removed in `public/index.html` or add whatever effects/triggers you please.
+Have now added confetti from () when you receive a donation. Can be disabled/removed in `public/index.html` or add whatever effects/triggers you please.
 
 ---
 

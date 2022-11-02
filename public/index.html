@@ -18,7 +18,7 @@
         async function FetchHtml() 
         {
             let response = await fetch('http://localhost:3000/api/value');
-            return await response.text(); // Returns it as Promise
+            return await response.text();
         }
         // Using the HTML
         let currentValue = undefined;
@@ -26,12 +26,14 @@
         {
             const newValue = await FetchHtml();
             if(currentValue !== newValue) {
-                console.log('Value changed!');
                 document.getElementById('myDiv').innerHTML = newValue;
                 //  Add actions here if the value changes
                 if(currentValue !== undefined) {
+                    console.log('Value changed!');
                     startConfetti();
                     sound.play();
+                } else {
+                    console.log('First time loading');
                 }
                 currentValue = newValue;
             } else {
